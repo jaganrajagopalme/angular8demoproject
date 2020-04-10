@@ -1,0 +1,46 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div>
+  <h2>Password Generator </h2>
+
+  <div>
+    <label>Enter the length</label>
+    <input  (input)="OnInputLength($event.target.value)" />
+  </div>
+  <div>
+    <label >Password Generator</label>
+  </div>
+  
+  <div>
+    <label>Use the Letter</label>
+    <input type="checkbox" (change)="OnLetterchanged()" />
+  </div>
+  <div>
+    <label>Use the Number</label>
+    <input type="checkbox" (change)="OnNumberChanged()" />
+  </div>
+  <div>
+    <label>Use the Symbol</label>
+    <input type="checkbox" (change)="OnSymbolChanged()" />
+  </div>
+  <div>
+    <button  (click)="OnButtonOnClick()" >Generate !</button>
+    
+  </div>
+  <div> 
+    <label>Your Password</label>
+    <input  [value]="Password"/>
+  </div>
+ 
+</div>
+
+
+
+
