@@ -7,38 +7,51 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div>
-  <h2>Password Generator </h2>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
 
-  <div>
+  <div class="field">
     <label>Enter the length</label>
-    <input  (input)="OnInputLength($event.target.value)" />
+    <input class="input"  (input)="OnInputLength($event.target.value)" />
   </div>
   <div>
     <label >Password Generator</label>
   </div>
   
-  <div>
-    <label>Use the Letter</label>
-    <input type="checkbox" (change)="OnLetterchanged()" />
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">      
+       <input type="checkbox" (change)="OnLetterchanged()" />
+        Use the Letter </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">  
+       <input type="checkbox" (change)="OnNumberChanged()" />
+       Use the OnNumberChanged</label>
+       </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <label class="checkbox">  
+     <input type="checkbox" (change)="OnSymbolChanged()" />  
+      Use the Symbols </label>
+      </div>
   </div>
   <div>
-    <label>Use the Number</label>
-    <input type="checkbox" (change)="OnNumberChanged()" />
-  </div>
-  <div>
-    <label>Use the Symbol</label>
-    <input type="checkbox" (change)="OnSymbolChanged()" />
-  </div>
-  <div>
-    <button  (click)="OnButtonOnClick()" >Generate !</button>
+    <button [disabled]="!(length && (IncludeNumbers || IncludeSymbols || IncludeLetters))"   (click)="OnButtonOnClick()" 
+    class="button is-link is-fullwidth" >Generate !</button>
     
   </div>
-  <div> 
+  <div class="box" *ngIf="Password"> 
     <label>Your Password</label>
-    <input  [value]="Password"/>
+    <input  class="input"  [value]="Password"/>
   </div>
- 
+ </div>
+ </div> 
 </div>
 
 
